@@ -1,0 +1,9 @@
+p {
+    color: green;
+    background-color: black;
+}
+
+.my-comp-p {
+    color: rgb(208, 255, 0);
+    background-color: chocolate;
+}

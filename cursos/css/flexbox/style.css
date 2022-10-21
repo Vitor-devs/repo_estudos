@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.header{
+    padding: 80px;
+    background-color: greenyellow;
+    text-align: center;
+}
+
+.navbar{
+    display: flex;
+  
+    background-color: black;
+    padding: 14px 20px;
+}
+
+.navbar a{
+    color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+.corpo{
+    display: flex;
+    flex: row wrap;
+}
+
+.card{
+    flex: 48%;
+    background-color: rgb(172, 168, 168);
+    height: 100px;
+    margin: 1%;
+}
+
+@media screen and (max-width:700px){
+    .navbar{
+        flex-direction: column;
+    }
+}
+

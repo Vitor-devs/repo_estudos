@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Attribute</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <input type="text" id="fnum"> <button id="btnDestaque">Destacar</button> <br><br>
+
+
+    <p>Curso de JavaScript</p>
+    <p>Curso de HTML5</p>
+    <p>Curso de CSS3</p>
+    <p>Curso de PHP/MySQL</p>
+    <p>Curso de C++</p>
+    <p>Curso de Photoshop</p>
+    <p>Curso de Unity/C#</p>
+    <p>Curso de Flash</p>
+
+
+
+
+    <script>
+
+
+        var btn = document.getElementById('btnDestaque');
+        btn.addEventListener("click", function () {
+            var p = document.getElementsByTagName("p");
+            for (var i = 0; i < p.length; i++) {
+                p[i].removeAttribute("style");
+            }
+            var at = document.createAttribute('style');
+            var num = document.getElementById('fnum').value;
+            at.value = "color: red;";
+            p[num - 1].setAttributeNode(at);
+
+        });
+
+
+    </script>
+</body>
+
+</html>

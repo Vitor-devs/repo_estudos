@@ -1,0 +1,1 @@
+alert('O mundo tá do balacobaco!')

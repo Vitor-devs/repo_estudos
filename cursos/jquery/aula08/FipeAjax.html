@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tabela Fipe</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tabela Fipe</h1>
+    <select id="marca">
+        <option selected disabled>Escolha a marca</option>
+    </select>
+
+    <select id="veiculo">
+        <option selected disabled>Escolha o veículo</option>
+    </select>
+
+    <select id="modelo">
+        <option selected disabled>Escolha ano/modelo</option>
+    </select>
+
+
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //marcas
+            $.get("http://fipeapi.appspot.com/api/1/carros/marcas.json", function (dados, status) {
+                var tamanho = dados.length;
+                for (i = 0; i < tamanho; i++) {
+                    $('#marca').append("<option value='" + dados[i].id + "'>" + data[i].name + "</option>")
+                }
+            });
+
+            $('#marca').change(function(){
+                id_marca = $(this).val();
+
+                $('#veiculo').html("<option selected disabled>Escolha o veículo</option>")
+                $('#modelo').html("<option selected disabled>Escolha ano/modelo</option>")
+            });
+
+
+            //veiculo
+            $.get("http://fipeapi.appspot.com/api/1/carros/veiculos/" + id_marca + ".json", function (dados, status) {
+                var tamanho = dados.length;
+                for (i = 0; i < tamanho; i++) {
+                    $('#veiculo').append("<option value='" + dados[i].id + "'>" + data[i].name + "</option>")
+                }
+            });
+
+            $('#veiculo').change(function(){
+                id_veiculo = $(this).val();
+
+                $("#ano_modelo").html(" <option selected disabled>Selecione o ano / modelo</option>");
+
+                //detalhando o veiculo
+                $.get("http://fipeapi.appspot.com/api/1/carros/veiculos/"+ id_marca +"/"+ id_veiculo +".json", function (dados, status){
+                    var tamanho = dados.length;
+
+                    for (i = 0; i < tamanho; i++) {
+                        $("#modelo").append("<option value='" + data[i].id + "'>" + data[i].name + "</option>");
+                    }
+                });
+
+
+            })
+
+        });
+
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+        //API NAO FUNCIONA
+
+    </script>
+</body>
+
+</html>

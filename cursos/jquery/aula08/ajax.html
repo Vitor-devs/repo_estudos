@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisição Ajax</title>
+</head>
+
+<body>
+    <h1>Conhecendo o Ajax</h1>
+    <div id="teste">
+        <p>Um conteudo inicial:</p>
+    </div>
+    <br>
+    <button id="botao">Clique aqui para carregar conteudo externo</button>
+
+    <hr>
+    <br><br>
+
+    <input id="cep" type="text" placeholder="Digite seu CEP" id=""> <br><br>
+    <input id="cidade" type="text" placeholder="Cidade" id=""> <br><br>
+    <input id="uf" type="text" placeholder="UF"> <br><br>
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#cep').blur(function () {
+                var valor = $(this).val();
+                $.ajax({
+                    type: "GET",
+                    url: "https://viacep.com.br/ws/"+valor+"/json/",
+                    success: function(dados, status){
+                        $('#cidade').val(dados.localidade);
+                        $('#uf').val(dados.uf);
+                    },
+                    error: function(){
+                        alert('Erro inesperado!')
+                    }
+                });
+            });    
+        });
+    </script>
+</body>
+
+</html>

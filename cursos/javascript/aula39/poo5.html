@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        class Carro {
+            constructor(tpCarro, tpComb) {
+                this.tipo = tpCarro
+                this.qtdeComb = 100;
+                this.ligado = false;
+                this.tipoComb = tpComb
+            }
+
+            info() {
+                console.log(`Qtde de Comb: ${this.qtdeComb}\nLigado:${this.ligado ? "Sim" : "Não"} \nTipo Combustível: ${this.tipoComb} \nTipo do carro: ${this.tipo} \nTipo do combustível: ${this.tipoComb}`)
+            }
+
+            set setLigado(t) {
+                this.ligado = t;
+            }
+
+            get getLigado(){
+                return this.ligado
+            }
+
+            set setComb(v) {
+                if (v < 0 || v > 100) {
+                    alert("Valor invalido")
+                } else {
+                    this.qtdeComb = v
+                }
+            }
+
+            get getComb() {
+                return this.qtdeComb
+            }
+
+        }
+
+        class CarroCombate extends Carro{
+            constructor(potTiro){ //Declara novo atrib
+                super("Combate", "Diesel");
+
+                //Daqui para baixo é coisa exclusiva do CarroCombate
+                this.tiro = 1500;
+                this.potTiro = 50;
+                this.velocidade = 30;
+            }
+
+            info(){ 
+                super.info() //Executa o info da classe carro
+                console.log("Carro de combate preparado")
+            }
+        }
+
+        class CarroTransporte extends Carro{
+            constructor(){
+                //Atributos da classe pai
+                super("Resgate", "Gasolaina")
+
+                //Coisas novas da classe CarroTransporte
+                this.velocidade = 82;
+                this.tiros = 1200
+            }
+
+            info(){
+                super.info()
+                console.log("Carro de transporte")
+            }
+        }
+
+
+        //Carro C2
+        const c2 = new CarroCombate();
+        console.log(c2.info())
+
+        const c3 = new CarroTransporte
+        console.log(c3.info())
+ 
+
+    </script>
+</body>
+
+</html>

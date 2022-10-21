@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.ex1{
+    border: 1px solid red;
+    max-width: 800px;
+}
+
+.ex2{
+    border: 1px solid red;
+    max-width: 600px;
+}

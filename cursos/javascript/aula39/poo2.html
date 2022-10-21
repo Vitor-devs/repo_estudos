@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos</title>
+</head>
+<body>
+    
+
+
+    <script>
+        class Carro{
+            constructor(cor, modelo, marca, km, ligado){
+                this.cor = cor;
+                this.modelo = modelo;
+                this.marca = marca;
+                this.km = km;
+                this.ligado = false;
+                
+            }
+
+            info(){
+                console.log(`Cor: ${this.cor}
+                Modelo: ${this.modelo}
+                KM: ${this.km}
+                Marca: ${this.marca}
+                Ligado:${this.ligado ? "Sim" : "Não"}`);
+            }
+
+            ligaDesliga(ld){
+                this.ligado = ld
+            }
+        
+        }
+
+        
+        const c1 = new Carro("Verde", "Fiat", "Honda", 1500);
+        const c2 = new Carro("Azul", "Caiene", "Porsche", 12);
+        c1.ligaDesliga(true)
+        console.log(c1.info());
+        console.log(c2.info());
+    </script>
+</body>
+</html>

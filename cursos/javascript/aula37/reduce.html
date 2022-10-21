@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Reduce</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        let pessoas = [
+            { nome: "Joao", idade: 15 },
+            { nome: "Enzo", idade: 5 },
+            { nome: "Valentina", idade: 12 },
+            { nome: "Derpina", idade: 27 },
+            { nome: "John", idade: 35 },
+            { nome: "Anselmo", idade: 40 },
+        ]
+
+        let nomes = pessoas.reduce((p1,p2)=>{
+            p1.push(p2.nome);
+            return p1;
+        },[]);
+
+        console.log(nomes)
+
+    
+        let num = [0,1,2,3,4,5]
+
+        let soma = num.reduce((n1,n2)=>{
+
+
+            console.log(n1 + '+'+ n2);
+
+            return n1+n2;
+
+            console.log('-----------------')
+        });
+
+        console.log(soma)
+    
+    </script>
+</body>
+
+</html>

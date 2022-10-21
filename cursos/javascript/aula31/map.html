@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        let produtos = new Map([
+            ["01", ["Mouse", "R$680"]],
+            ["02", ["Teclado", "R$360"]],
+            ["03", ["Monitor", "R$150"]],
+            ["04", ["Gabinete", "R$200"]]
+        ]);
+        
+        produtos.set("05", "Memória");
+
+        //produtos.clear()
+
+        //produtos.delete("05")
+
+        console.log(`Tamanho: ${produtos.size}`);
+        for(var n of produtos){
+            console.log(n)
+        }
+    </script>
+</body>
+
+</html>

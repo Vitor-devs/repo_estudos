@@ -1,0 +1,18 @@
+.tituloh1{
+    color: darkblue;
+}
+
+ul{
+    list-style-type: none;
+    border: 5px solid red;
+    border-radius: 5px;
+    padding: 1.1%;
+    background-color: black;
+    
+}
+
+ul > li {
+    color: white;
+    border: 1px solid orange;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores</title>
+</head>
+
+<body>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit exercitationem veniam totam iure
+        voluptatibus esse. Unde odit quas sed. Hic quae quos cumque saepe aspernatur voluptatibus veritatis doloribus
+        debitis?
+    </p>
+
+    <hr>
+
+    <p id="teste">Isso é um paragráfo</p>
+    <p class="p-yellow">Outro paragráfo</p>
+
+    <hr>
+
+    <input type="text" style="padding: 50px;" placeholder="Digite algo" id="campotexto">
+
+    <button id="botao" style="padding: 50px;">Clique aqui</button>
+
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*
+            $('p').hide();  
+            $('#botao').click(function () {
+                document.body.style.backgroundColor = 'green';
+                $('p').show();
+                
+            });
+
+            $('#teste').dblclick(function () {
+                $(this).css("color", "blue");
+            });
+            */
+
+            $('#botao').on({
+                click: function(){
+
+                }, 
+
+                dblclick: function(){
+                    
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

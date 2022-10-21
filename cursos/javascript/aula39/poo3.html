@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters e Setters</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        class Carro {
+            constructor(cor, modelo, marca, km, ligado, comb) {
+                this.cor = cor;
+                this.modelo = modelo;
+                this.marca = marca;
+                this.km = km;
+                this.ligado = false;
+                this.comb = 10
+            }
+
+            info() {
+                console.log(`Cor: ${this.cor}
+                Modelo: ${this.modelo}
+                KM: ${this.km}
+                Marca: ${this.marca}
+                Ligado:${this.ligado ? "Sim" : "Não"}
+                Combustível: ${this.comb}`);
+
+            }
+
+            ligar() {
+                this.ligado = true;
+            }
+
+            desligar() {
+                this.ligado = false
+            }
+
+            set setComb(v) {
+                this.comb = v
+                console.log(`A quantidade de combustível mudou, sendo atualmente igual a ${this.comb}`);
+            }
+
+            get getComb() {
+                return this.comb
+            }
+
+        }
+        //Carro C1
+        const c1 = new Carro("Verde", "Fiat", "Honda", 1500);
+        c1.setComb = 120
+        console.log(c1.info())
+
+
+        //Carro C2
+        const c2 = new Carro("Azul", "Caiene", "Porsche", 12);
+        c2.setComb = 75
+        console.log(c2.info())
+        console.log(c2.getComb)
+
+
+    </script>
+</body>
+
+</html>

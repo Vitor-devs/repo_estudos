@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage 2</title>
+    <style>
+        #fconf{
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid black;
+            background-color: grey;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <p>LocalStorage - Curso de Javascript</p>
+    <p id="painel"></p>
+
+    <button onclick="mostraConf()">Configurações</button> <br><br>
+
+    <form id="fconf">
+        <label for="fnome">Nome:</label>
+        <input type="text" name="fnome" id="fnome" size="20"> <br><br>
+
+        <label>Cor fundo:</label> <br>
+        <input type="radio" name="fcorF" onclick="defineCor(1, 'red')"> Vermelho <br>
+        <input type="radio" name="fcorF" onclick="defineCor(1, 'blue')"> Azul <br>
+        <input type="radio" name="fcorF" onclick="defineCor(1, 'green')"> Verde <br> 
+        <input type="radio" name="fcorF" onclick="defineCor(1, 'black')"> Preto <br> 
+        <input type="radio" name="fcorF" onclick="defineCor(1, 'white')"> Branco <br> <br>
+
+        <label> Cor texto:</label> <br>
+        <input type="radio" name="fcorT" onclick="defineCor(2, 'black')"> Preto <br>
+        <input type="radio" name="fcorT" onclick="defineCor(2, 'white')"> Branco <br>
+        <input type="button" value="Gravar" onclick="gravar()"> <br>
+
+
+    </form>
+
+
+    
+    <script>
+
+        var vcorf, vcort ,vnome;
+
+        if (localStorage.nome) {
+            vcorf = localStorage.corf;
+            vcort = localStorage.cort;
+            vnome = localStorage.nome;
+            defineCor(1, vcorf);
+            defineCor(2, vcort);
+            document.getElementById('painel').innerHTML = `Bem vindo mais uma vez ${vnome} ${"<hr>"}`
+
+            
+        } else {
+            alert("Seu navegador não possui suporte para esse armazenamento");
+        }
+
+
+
+
+
+        function gravar(){
+            vnome = document.getElementById('fnome').value;
+            localStorage.corf = vcorf;
+            localStorage.cort = vcort;
+            localStorage.nome = vnome;
+            var form = document.getElementById('fconf');
+            form.style.display = 'none';
+
+        }
+
+
+
+
+
+        function defineCor(op /*Define se a cor é do texto ou fundo*/, cor){
+            if (op == 1){
+                document.body.style.backgroundColor = cor;
+                vcorf = cor
+            } else {
+                document.body.style.color = cor;
+                vcort = cor
+            }
+        }
+
+        function mostraConf(){
+            var form = document.getElementById('fconf');
+            form.style.display = 'block';
+        }
+
+
+    </script>
+</body>
+
+</html>

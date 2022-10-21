@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Filter</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+            box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.288);
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            text-align: center;
+
+        }
+
+        #buscaLista{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="text" id="busca" placeholder="Buscar na Tabela">
+    <!--Criada a tabela-->
+    <table>
+
+        <!--Criado o cabeçalho-->
+        <thead>
+
+            <!--Criada a primeira linha/Linha de cabeçalho(row)-->
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <!--Criado o corpo da tabela-->
+        <tbody id="MinhaTabela">
+            <!--Criada a primeira linha(row)-->
+            <tr>
+                <!--Dispondo itens em coluna(columns)-->
+                <td>Vitor</td>
+                <td>Soares</td>
+                <td>vitor@ex.com</td>
+            </tr>
+
+            <!--Criada a segunda linha-->
+            <tr>
+                <td>Dimitri</td>
+                <td>Teixeira</td>
+                <td>dimitri@ex.com</td>
+            </tr>
+
+            <!--Criada a terceira-->
+            <tr>
+                <td>Maria</td>
+                <td>Aparecida</td>
+                <td>maria@ex.com</td>
+            </tr>
+        </tbody>
+
+
+
+
+
+        
+    </table>
+    <input type="text" id="buscaLista" placeholder="Buscar na Lista">
+
+    <ul id="listaCompra">
+        <li>Arroz</li>
+        <li>Feijão</li>
+        <li>Carne</li>
+        <li>Leite</li>
+    </ul>
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#busca').on('keyup', function(){
+                var valor = $(this).val().toLowerCase();
+                
+                $('#MinhaTabela tr').filter(function(){
+                    $(this).toggle($(this).text().toLocaleLowerCase().indexOf(valor) > -1);
+                });
+            });          
+
+
+            $('#buscaLista').keyup(function(){
+                var valorLista = $(this).val().toLowerCase();
+
+                $('#listaCompra li').filter(function(){
+                    $(this).toggle($(this).text().toLocaleLowerCase().indexOf(valorLista) > -1);
+                });
+            });
+       
+        });
+    </script>
+</body>
+
+</html>

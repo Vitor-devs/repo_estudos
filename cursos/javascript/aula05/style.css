@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+
+#teste{
+    margin: auto; 
+    width:80%; 
+    height: 200px; 
+    background:blue;
+}
+
+#campoTexto{
+    padding: 80px;
+    font-size: 40px;
+}

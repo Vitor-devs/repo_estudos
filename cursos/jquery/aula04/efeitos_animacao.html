@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeitos e Animações</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .d-inline {
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+        }
+
+        button {
+            padding: 40px;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .red {
+            background: red;
+        }
+
+        #flip, #painel{
+            padding: 5px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+
+        }
+
+        #painel{
+            display: none;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-inline red"></div>
+
+
+
+
+
+
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.red').click(function () {
+                $(this).css('background-color', "blue").slideUp(2000).slideDown(2000).css('background-color', "red");
+            });
+            
+
+        });
+
+
+    </script>
+</body>
+
+</html>

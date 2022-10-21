@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>O jQuery pode manipular o DOM</h1>
+    <h2>DOM = Document Object Model (Modelo de Objeto de Documento)</h2>
+    <p>
+        Em outras palavras, é a árvore de elementos do nosso código. O jQuery pode acessar e atualizar dinamicamente o
+        conteúdo, a estrutura e o estilo de um documento. <br>Tudo pode ser modificado, adicionado ou removido usando
+        jQuery 
+    </p>
+
+
+    <input id="campoTexto" type="text" placeholder="Digite algo">
+
+    <br><br>
+
+    <a id="link" href="https://google.com.br">Link para o Google</a>
+
+    <br><br>
+
+    <img style="border: 1px solid black;" src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" alt="Logo google">
+
+    <div id="teste">
+        <p>paragrago</p>
+        <p>paragrago</p>
+        <p>paragrago</p>
+        <p>paragrago</p>
+        <p>paragrago</p>
+    </div>
+
+    <br><br>
+
+    <button id="botao1">modificar titulo</button><br><br>
+    <button id="botao2">modificar titulo2</button><br><br>
+    <button id="botao3">atribuir valor ao input</button><br><br>
+    <button id="botao4">trocar link</button><br><br>
+    <button id="botao5">trocar img</button><br><br>
+    <button id="botao6">deletar titulo</button><br><br>
+    <button id="botao7">esvaziar div</button><br><br>
+    <hr>
+    <button id="botao8">mudar css</button><br><br>
+    <button id="botao9">tamanho da imagem</button><br><br>
+
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            var textoTeste = $('h1').text();
+            $('#campoTexto').blur(function () {
+                var valorCampo = campoTexto.val();
+                alert(valorCampo);
+            })
+
+            $('#botao1').click(function () {
+                $(body).append(" //O texto mudou para algo novo!");
+            });
+
+            $('#botao2').click(function(){
+                $('h2').text("Oh meu Deus! Funcionou");
+            });
+
+            $('#botao3').click(function(){
+                //USA VAL PQ É CAMPO INPUT
+                $('#campoTexto').val("Adicionado um valor");
+            });
+
+            $('#botao4').click(function(){
+                $("#link").html("Link para Globo");
+            });
+
+            $('#botao5').click(function(){
+                $("img").attr("src", "https://s2.glbimg.com/dLl2P7yBYMBFiuDzlbhNOX_z8DM=/0x0:3640x2376/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/9/b/7xAkyiQSKABKVOOWFp0w/2019-10-02t162142z-1-lynxmpef911b0-rtroptp-4-tech-google-acao.jpg");
+            });
+
+            $('#botao6').click(function(){
+                $('h1').remove()
+            })
+
+            $('#botao7').click(function(){
+                $('#teste').empty();
+            })
+
+            $('#botao8').click(function(){
+                $('#link').removeClass('red');
+               
+            })
+
+
+            $('#botao9').click(function(){
+                var largIMG = $('img').width();
+               
+            })
+        });
+
+
+
+    </script>
+</body>
+
+</html>

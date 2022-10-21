@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>CLIQUE AQUI</button>
+    <p></p>
+
+    <script src="../js_jquery/jquery-3.6.0.js"></script>
+    <script>
+        $.noConflict(); 
+        jQuery(document).ready(function(){
+            jQuery('button').click(function(){
+                jQuery('p').text('Adicionou texto com o botão')
+            });
+
+        });
+    </script>
+</body>
+</html>
